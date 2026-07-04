@@ -313,6 +313,53 @@
   text-decoration: underline;
 }
 
+.app-auth-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+
+.auth-login {
+  background: white;
+  border: 1px solid #d0c9b8;
+  color: #4a5568;
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.auth-login:hover {
+  background: #f5f3ee;
+}
+
+.auth-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-name {
+  font-size: 0.82rem;
+  color: #6d7a8c;
+}
+
+.auth-logout {
+  background: transparent;
+  border: none;
+  color: #b0a48a;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.auth-logout:hover {
+  color: #8a7d5c;
+}
+
 .todo-page {
   max-width: 720px;
   margin: 0 auto;

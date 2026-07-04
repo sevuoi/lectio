@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { loadMeditations, deleteMeditation } from "../data/storage";
 import { getQuestions, methodLabels } from "../data/questions";
 
@@ -7,12 +7,21 @@ function formatDate(iso) {
   return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}.`;
 }
 
-export default function MeditationHistory({ onBack }) {
-  const [meditations, setMeditations] = useState(loadMeditations);
+export default function MeditationHistory({ user, onBack }) {
+  const [meditations, setMeditations] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [openId, setOpenId] = useState(null);
 
-  const handleDelete = (id) => {
-    setMeditations(deleteMeditation(id));
+  useEffect(() => {
+    loadMeditations(user?.uid).then((list) => {
+      setMeditations(list);
+      setLoading(false);
+    });
+  }, [user]);
+
+  const handleDelete = async (id) => {
+    await deleteMeditation(id, user?.uid);
+    setMeditations((prev) => prev.filter((m) => m.id !== id));
     if (openId === id) setOpenId(null);
   };
 
@@ -20,7 +29,9 @@ export default function MeditationHistory({ onBack }) {
     <div>
       <h2>지난 묵상</h2>
 
-      {meditations.length === 0 && (
+      {loading && <p className="meditation-recap-empty">불러오는 중…</p>}
+
+      {!loading && meditations.length === 0 && (
         <p className="meditation-recap-empty">
           아직 저장된 묵상이 없습니다. 묵상을 마치고 저장해보세요.
         </p>

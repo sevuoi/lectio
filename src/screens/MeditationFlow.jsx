@@ -20,7 +20,7 @@ function buildDocument(verse, notes, questions, methodLabel) {
   return parts.join("\n\n");
 }
 
-export default function MeditationFlow({ verse, method, onRestart }) {
+export default function MeditationFlow({ verse, method, user, onRestart }) {
   const [step, setStep] = useState(1);
   const [notes, setNotes] = useState({});
   const [finished, setFinished] = useState(false);
@@ -47,9 +47,9 @@ export default function MeditationFlow({ verse, method, onRestart }) {
       }
     };
 
-    const handleSave = () => {
+    const handleSave = async () => {
       if (saved) return;
-      saveMeditation({ verse, method, notes });
+      await saveMeditation({ verse, method, notes }, user?.uid);
       setSaved(true);
     };
 
