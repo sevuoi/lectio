@@ -296,6 +296,23 @@
   color: #1f2a44;
 }
 
+.app-footer {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.app-feedback-link {
+  color: #b0a48a;
+  font-size: 0.78rem;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.app-feedback-link:hover {
+  color: #8a7d5c;
+  text-decoration: underline;
+}
+
 .todo-page {
   max-width: 720px;
   margin: 0 auto;

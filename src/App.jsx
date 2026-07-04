@@ -6,6 +6,7 @@ import MeditationFlow from "./screens/MeditationFlow";
 import MeditationHistory from "./screens/MeditationHistory";
 
 const stageOrder = ["method", "verse", "meditation"];
+const FEEDBACK_URL = "https://forms.gle/REPLACE_WITH_YOUR_FORM_ID";
 
 export default function App() {
   const [stage, setStage] = useState("method");
@@ -74,6 +75,17 @@ export default function App() {
           ← 이전 단계
         </button>
       )}
+
+      <footer className="app-footer">
+        <a
+          href={FEEDBACK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="app-feedback-link"
+        >
+          의견 보내기
+        </a>
+      </footer>
     </div>
   );
 }
