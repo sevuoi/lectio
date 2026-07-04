@@ -1,0 +1,35 @@
+:root {
+  font-family: "Noto Serif KR", "Nanum Myeongjo", serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2a44;
+  background-color: #eef2f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+}

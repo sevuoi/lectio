@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <title>말씀 묵상</title>
+  <g fill="none" stroke="#A5813C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-260,-85)">
+    <path d="M340 178 C 306 146 296 118 313 101 C 327 88 340 97 340 112 C 340 97 353 88 367 101 C 384 118 374 146 340 178 Z"/>
+    <path d="M340 112 L340 148"/>
+    <path d="M326 126 L354 126"/>
+    <path d="M340 196 C 318 182 292 179 268 186 L268 228 C 292 221 318 223 340 236"/>
+    <path d="M340 196 C 362 182 388 179 412 186 L412 228 C 388 221 362 223 340 236"/>
+    <path d="M340 196 L340 236"/>
+  </g>
+</svg>
